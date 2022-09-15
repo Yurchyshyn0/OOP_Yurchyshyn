@@ -51,4 +51,4 @@ https://mermaid-js.github.io/mermaid/#/
 
 UML діаграма класів, що описує структуру шаблону проєктування Будівник.
 
-3. https://github.com/Yurchyshyn0/OOP_Yurchyshyn/blob/d3491f0eec4a151282c6226189b8a378cb4f2ed4/lab9/lab9.py
+3. https://github.com/Yurchyshyn0/OOP_Yurchyshyn/blob/30edb9ce7204a2c4530133e25421f89fc383cf1d/mod2.py
