@@ -1,9 +1,9 @@
  from __future__ import annotations
- from abc import ABC, abstractmethod
- from typing import Any
+from abc import ABC, abstractmethod
+from typing import Any
 
 class Builder(ABC):
-"""Інтерфейс Builder визначає методи для створення різних частин об'єктів продукт."""
+    """Інтерфейс Builder визначає методи для створення різних частин об'єктів продукт."""
     @property
     @abstractmethod
     def product(self) -> None:
@@ -19,10 +19,12 @@ class Builder(ABC):
         pass
 
 class ConcreteBuilder1(Builder):
-"""Класи Concrete Builder слідують інтерфейсу Builder і надають конкретні реалізації етапів побудови. Ваша програма може мати
+    """Класи Concrete Builder слідують інтерфейсу Builder і надають конкретні реалізації етапів побудови. Ваша програма може мати
 кілька варіацій конструкторів, реалізованих по-різному."""
     def __init__(self) -> None:
-"""Новий екземпляр builder повинен містити порожній об'єкт product, який використовується в подальшій збірці."""
+        """
+       Новий екземпляр builder повинен містити порожній об'єкт product, який використовується в подальшій збірці.
+        """
         self.reset()
     def reset(self) -> None:
         self._product = Product1()
@@ -45,10 +47,13 @@ class Product1():
         self.parts.append(part)
     def list_parts(self) -> None:
         print(f"Product parts: {', '.join(self.parts)}", end="")
-
 class Director:
-""" Директор несе відповідальність тільки за виконання етапів будівництва в певної послідовності. Це корисно при виробництві виробів відповідно до
-певним замовленням або конфігурацією. Строго кажучи, клас Director є необов'язковим, оскільки клієнт може безпосередньо керувати конструкторами. """
+    """
+    Директор несе відповідальність тільки за виконання етапів будівництва в
+    певної послідовності. Це корисно при виробництві виробів відповідно до
+певним замовленням або конфігурацією. Строго кажучи, клас Director є
+необов'язковим, оскільки клієнт може безпосередньо керувати конструкторами.
+    """
     def __init__(self) -> None:
         self._builder = None
     @property
@@ -56,19 +61,28 @@ class Director:
         return self._builder
     @builder.setter
     def builder(self, builder: Builder) -> None:
-""" Директор працює з будь-яким екземпляром builder, який передається клієнтським кодом до нього.
-Таким чином, клієнтський код може змінити остаточний тип новоствореного зібраний продукт. """
+        """
+        Директор працює з будь-яким екземпляром builder, який передається клієнтським кодом
+        до нього. Таким чином, клієнтський код може змінити остаточний тип новоствореного
+        зібраний продукт.
+        """
         self._builder = builder
-""" Директор може створити кілька варіантів продукту, використовуючи один і той же Будівельні сходи. """
+    """
+    Директор може створити кілька варіантів продукту, використовуючи один і той же
+    Будівельні сходи.
+    """
     def build_minimal_viable_product(self) -> None:
         self.builder.produce_part_a()
     def build_full_featured_product(self) -> None:
         self.builder.produce_part_a()
         self.builder.produce_part_b()
         self.builder.produce_part_c()
-
-    if __name__ == "__main__":
-""" Клієнтський код створює об'єкт builder, передає його директору, а потім ініціює процес побудови. Кінцевий результат витягується з об'єкта builder. """
+if __name__ == "__main__":
+    """
+    Клієнтський код створює об'єкт builder, передає його директору, а потім
+ініціює процес побудови. Кінцевий результат витягується з об'єкта
+builder.
+    """
     director = Director()
     builder = ConcreteBuilder1()
     director.builder = builder
