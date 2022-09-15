@@ -16,17 +16,6 @@
 
 **Мета роботи:** 
 Ознайомитися з твірними шаблонами та їх застосування на практиці.
-
-
-```mermaid
-graph LR
-
-A-->B
-
-```
-
-
-https://mermaid-js.github.io/mermaid/#/
  
  ## Завдання
 1. Короткий теоретичний опис групи твірних шаблонів.
@@ -52,3 +41,13 @@ https://mermaid-js.github.io/mermaid/#/
 UML діаграма класів, що описує структуру шаблону проєктування Будівник.
 
 3. https://github.com/Yurchyshyn0/OOP_Yurchyshyn/blob/30edb9ce7204a2c4530133e25421f89fc383cf1d/mod2.py
+
+  Результат програми:
+   
+        Standard basic product: 
+        Product parts: PartA1
+        Standard full featured product: 
+        Product parts: PartA1, PartB1, PartC1
+
+        Custom product: 
+        Product parts: PartA1, PartB1> 
