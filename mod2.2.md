@@ -39,15 +39,12 @@
 2. Міст — це структурний патерн проектування, який розділяє один або кілька класів на дві окремі ієрархії — абстракцію та реалізацію, 
 дозволяючи змінювати код в одній гілці класів, незалежно від іншої.
 
-
-3. https://github.com/Yurchyshyn0/OOP_Yurchyshyn/blob/30edb9ce7204a2c4530133e25421f89fc383cf1d/mod2.py
+3. https://github.com/Yurchyshyn0/OOP_Yurchyshyn/blob/847f6af1e1db3b4653f3d422c0460bae058e1f1f/mod2.2.py
 
   Результат програми:
    
-        Standard basic product: 
-        Product parts: PartA1
-        Standard full featured product: 
-        Product parts: PartA1, PartB1, PartC1
+        Abstraction: Base operation with:
+        ConcreteImplementationA: Here's the result on the platform A.
 
-        Custom product: 
-        Product parts: PartA1, PartB1> 
+        ExtendedAbstraction: Extended operation with:
+        ConcreteImplementationB: Here's the result on the platform B.
